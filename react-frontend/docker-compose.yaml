@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  
+  app:
+    build: .
+    entrypoint: ./.docker/entrypoint.sh
+    ports: 
+      - 3001:3000
+    volumes:
+      - .:/home/node/app
