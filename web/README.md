@@ -10,7 +10,7 @@ Fazer uma imagem que suba um webserver em GO na porta 8000 e fazer o push dessa 
 ```sudo docker run --rm -p 8000:8000 souzarodrigo/go-web-onepiece```
 ## Subir o container localmente
 #### Builde a imagem
-```sudo docker build . -t gowebserver```
+```sudo docker build . -t go-web-onepiece```
 #### Suba o container
 ```sudo docker run --rm --name imersao -p 8000:8000 go-web-onepiece:latest```
 
