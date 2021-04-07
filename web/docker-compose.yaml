@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  one-piece:
+    build: .
+    container_name: go-web-onepiece
+    ports:
+      - 8000:8000
