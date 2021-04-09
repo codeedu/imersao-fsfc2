@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simulator
+  template:
+    metadata:
+      labels:
+        app: simulator
+    spec:
+      containers:
+        - name: simulator
+          image: wesleywillians/imersao2-simulator:latest
+          volumeMounts:
+            - name: simulator-volume
+              mountPath: /go/src/.env
+              subPath: .env
+              
+
+      volumes:
+        - name: simulator-volume
+          configMap:
+            name: simulator-conf
+            items:
+              - key: env
+                path: .env
+          
+        

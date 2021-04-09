@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: wesleywillians/imersao2-backend
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: backend-volume
+              mountPath: /home/node/app/.env
+              subPath: .env
+      volumes:
+        - name: backend-volume
+          configMap:
+            name: backend-conf
+            items:
+              - key: env
+                path: .env
+          
+        
