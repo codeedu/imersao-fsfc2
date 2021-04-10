@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nest-back:
+    build: nest-api
+    ports:
+      - "3000:3000"
+
+  react-front:
+    build: react-app
+    ports:
+      - "3001:3000"
+    depends_on:
+      - nest-back
