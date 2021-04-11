@@ -1,13 +1,19 @@
 version: "3"
 services:
-  nest-back:
+  backend:
     build: nest-api
+    entrypoint: .docker/entrypoint.sh
     ports:
       - "3000:3000"
+    volumes:
+      - ./nest-api:/usr/src/app
 
-  react-front:
+  frontend:
     build: react-app
+    entrypoint: .docker/entrypoint.sh
     ports:
       - "3001:3000"
+    volumes:
+      - ./react-app:/usr/src/app
     depends_on:
-      - nest-back
+      - backend

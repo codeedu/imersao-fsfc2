@@ -6,4 +6,4 @@ COPY package*.json ./
 
 COPY . .
 
-ENTRYPOINT [ ".docker/entrypoint.sh" ]
+ENTRYPOINT [".docker/entrypoint.sh"]
