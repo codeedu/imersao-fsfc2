@@ -1,0 +1,17 @@
+h1, h2 {
+  text-align: center;
+  width: 100%;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+

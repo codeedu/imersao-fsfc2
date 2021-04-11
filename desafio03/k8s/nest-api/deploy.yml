@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nest-api
+  template:
+    metadata:
+      name: nest-api
+      labels:
+        app.kubernetes.io/name: nest-api
+    spec:
+      containers:
+        - name: nest-api
+          image: fhmrk/imersaofsfc-desafio2-backend
+          ports:
+            - containerPort: 3000

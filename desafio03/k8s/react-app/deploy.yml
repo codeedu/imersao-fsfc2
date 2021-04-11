@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: react-app
+  template:
+    metadata:
+      name: react-app
+      labels:
+        app.kubernetes.io/name: react-app
+    spec:
+      containers:
+        - name: react-app
+          image: fhmrk/imersaofsfc-desafio2-frontend
+          ports:
+            - containerPort: 3001
