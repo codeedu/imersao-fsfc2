@@ -17,4 +17,4 @@ spec:
         - name: react-app
           image: fhmrk/imersaofsfc-desafio2-frontend
           ports:
-            - containerPort: 3001
+            - containerPort: 3000
